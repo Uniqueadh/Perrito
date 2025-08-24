@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perrito</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #800000, #0d0d0d01);
+      color: #333;
+      transition: background 0.6s ease, color 0.6s ease;
+    }
+
+    /* Header */
+    header {
+      background: #800000;
+      color: white;
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      font-size: 26px;
+      letter-spacing: 2px;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+
+    header h1:hover {
+      transform: scale(1.05);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 2px;
+      background: white;
+      transition: width 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #ffebeb;
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(128,0,0,0.7), rgba(128,0,0,0.7)), url("poetry.png") center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      animation: fadeIn 2s ease;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      margin-bottom: 15px;
+      animation: slideDown 1.2s ease;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 600px;
+      line-height: 1.6;
+      animation: slideUp 1.2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Cards Section */
+    .container {
+      padding: 60px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: rgb(245, 245, 247);
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 10px 20px rgba(128,0,0,0.4);
+    }
+
+    .card h3 {
+      color: #800000;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      line-height: 1.5;
+    }
+
+    /* Footer */
+    footer {
+      background: #800000;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+ .menu-btn {
+      display: none;
+    }
+    /* Responsive Nav */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        background: #660000;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        display: none;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      nav ul li {
+        margin: 15px 0;
+        text-align: center;
+      }
+
+      .menu-btn {
+        display: block;
+        background: white;
+        color: #800000;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    }
+
+  
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Perrito</h1>
+    <nav>
+      <button class="menu-btn" onclick="toggleMenu()">☰</button>
+      <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="poetry.html">Poetry about her</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>A Home for Words and Warmth</h2>
+    <p>A sanctuary of words and feelings, where every verse flows with love, every pause whispers warmth, and every page embraces your heart.</p>
+  </section>
+<div class="card">
+  <img src="poetry text.png" alt="My Photo" width="300">
+  <h3>Her Hand in Mine</h3>
+  <p>Her hand in mine was not just touch, but a promise that is unspoken.</p>
+</div>
+  <section class="container">
+    <div class="card">
+      <h3>Made With Love</h3>
+      <p>Every word, every line, every detail crafted to touch the heart.</p>
+    </div>
+    <div class="card">
+      <h3>Love That Follows You</h3>
+      <p>Whether on mobile, tablet, or desktop, the words and poetry stay close—just like love does.</p>
+    </div>
+    <div class="card">
+      <h3>When Falling Feels Like Forever</h3>
+      <p>It's the kind of love that feels endless, yet slips through your hands. A fall that never lands, a memory that lingers — beautiful, but heavy with the ache of what can't last.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 UniqueSite. All rights reserved.</p>
+  </footer>
+ <script>
+    function toggleMenu() {
+      document.getElementById("nav-links").classList.toggle("show");
+    } 
+  </script>
+</body>
+</html>
